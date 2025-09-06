@@ -318,7 +318,7 @@ def main() -> None:
     )
 
     # Load default files; allow user override in sidebar
-    default_f1 = Path(st.session_state.get("file1", "7311.xlsx"))
+    default_f1 = Path(st.session_state.get("file1", "7311_tanks_only.xlsx"))
     default_f2 = Path(st.session_state.get("file2", "84195010 (1).xlsx"))
     df_all = concat_sources([default_f1, default_f2])
 
