@@ -178,7 +178,7 @@ def filter_block(df: pd.DataFrame) -> pd.DataFrame:
     st.sidebar.header("Filters")
     # File path overrides for convenience
     st.sidebar.caption("Point to files if different from defaults")
-    f1 = st.sidebar.text_input("Excel File 1", "7311.xlsx")
+    f1 = st.sidebar.text_input("Excel File 1", "7311_tanks_only.xlsx")
     f2 = st.sidebar.text_input("Excel File 2", "84195010 (1).xlsx")
     st.sidebar.divider()
 
@@ -449,30 +449,57 @@ def main() -> None:
                 s2 = topn_series(filtered, "consignee", "value_usd", n=20)
                 if not s2.empty:
                     st.plotly_chart(px.bar(s2, title="Top Consignees by Value"), use_container_width=True)
-        st.markdown("**Supplier Footprint by Country**")
+        # --- Supplier Mix by Country ---
+        st.markdown("**Supplier Mix by Country (select country to view suppliers)**")
         if {"shipper", "country_destination"}.issubset(filtered.columns):
-            ship_country = (
-                filtered.groupby(["shipper", "country_destination"])[["value_usd", "quantity"]]
+            countries = sorted([x for x in filtered["country_destination"].dropna().unique()])
+            pick_country = st.selectbox("Choose Country for Supplier Mix", countries, key="supplier_mix_country")
+            sub_sup = filtered[filtered["country_destination"] == pick_country].copy()
+            sup_mix = (
+                sub_sup.groupby("shipper")[["value_usd", "quantity"]]
                 .sum(min_count=1)
                 .reset_index()
-                .sort_values(["shipper", "value_usd"], ascending=[True, False])
+                .sort_values("value_usd", ascending=False)
             )
-            st.dataframe(ship_country, use_container_width=True, height=400)
-            download_button(
-                ship_country, "Download Shipper×Country", "shipper_country_footprint.csv"
-            )
-        st.markdown("**Consignee Mix per Country**")
+            if {"value_usd", "quantity"}.issubset(sup_mix.columns):
+                sup_mix["avg_unit_rate"] = sup_mix["value_usd"] / sup_mix["quantity"]
+            st.dataframe(sup_mix, use_container_width=True, height=420)
+            download_button(sup_mix, f"Download Supplier Mix for {pick_country}", f"supplier_mix_{pick_country}.csv")
+            if not sup_mix.empty:
+                st.plotly_chart(
+                    px.bar(sup_mix.head(30), x="shipper", y="value_usd", title=f"Top Suppliers by Value – {pick_country}"),
+                    use_container_width=True,
+                )
+                st.plotly_chart(
+                    px.bar(sup_mix.sort_values("quantity", ascending=False).head(30), x="shipper", y="quantity", title=f"Top Suppliers by Quantity – {pick_country}"),
+                    use_container_width=True,
+                )
+
+        # --- Consignee Mix by Country ---
+        st.markdown("**Consignee Mix by Country (select country to view consignees)**")
         if {"consignee", "country_destination"}.issubset(filtered.columns):
-            cons_country = (
-                filtered.groupby(["country_destination", "consignee"])[["value_usd", "quantity"]]
+            countries2 = sorted([x for x in filtered["country_destination"].dropna().unique()])
+            pick_country2 = st.selectbox("Choose Country for Consignee Mix", countries2, key="consignee_mix_country")
+            sub_cons = filtered[filtered["country_destination"] == pick_country2].copy()
+            cons_mix = (
+                sub_cons.groupby("consignee")[["value_usd", "quantity"]]
                 .sum(min_count=1)
                 .reset_index()
-                .sort_values(["country_destination", "value_usd"], ascending=[True, False])
+                .sort_values("value_usd", ascending=False)
             )
-            st.dataframe(cons_country, use_container_width=True, height=400)
-            download_button(
-                cons_country, "Download Consignee×Country", "consignee_mix_per_country.csv"
-            )
+            if {"value_usd", "quantity"}.issubset(cons_mix.columns):
+                cons_mix["avg_unit_rate"] = cons_mix["value_usd"] / cons_mix["quantity"]
+            st.dataframe(cons_mix, use_container_width=True, height=420)
+            download_button(cons_mix, f"Download Consignee Mix for {pick_country2}", f"consignee_mix_{pick_country2}.csv")
+            if not cons_mix.empty:
+                st.plotly_chart(
+                    px.bar(cons_mix.head(30), x="consignee", y="value_usd", title=f"Top Consignees by Value – {pick_country2}"),
+                    use_container_width=True,
+                )
+                st.plotly_chart(
+                    px.bar(cons_mix.sort_values("quantity", ascending=False).head(30), x="consignee", y="quantity", title=f"Top Consignees by Quantity – {pick_country2}"),
+                    use_container_width=True,
+                )
 
     # Tab 4: Descriptions (Deep Dive)
     with tab4:
