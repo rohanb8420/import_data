@@ -566,6 +566,26 @@ def main() -> None:
                     ),
                     use_container_width=True,
                 )
+                # --- Bubble chart: Value vs Quantity by Description ---
+                bubble_df = mix_val.copy()
+                bubble_df = bubble_df[bubble_df["quantity"].notna() & bubble_df["value_usd"].notna()]
+                if not bubble_df.empty:
+                    fig_bubble = px.scatter(
+                        bubble_df,
+                        x="quantity",
+                        y="value_usd",
+                        size="avg_unit_rate" if "avg_unit_rate" in bubble_df.columns else None,
+                        color="description_any",
+                        hover_name="description_any",
+                        title=f"Value vs Quantity by Description – {pick}",
+                        size_max=40,
+                    )
+                    fig_bubble.update_layout(
+                        xaxis_title="Quantity",
+                        yaxis_title="Value (USD)",
+                        legend_title="Description",
+                    )
+                    st.plotly_chart(fig_bubble, use_container_width=True)
         else:
             st.info("Missing columns to compute per-country mix.")
 
