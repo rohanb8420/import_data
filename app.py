@@ -568,13 +568,26 @@ def main() -> None:
                 )
                 # --- Bubble chart: Value vs Quantity by Description ---
                 bubble_df = mix_val.copy()
-                bubble_df = bubble_df[bubble_df["quantity"].notna() & bubble_df["value_usd"].notna()]
+                bubble_df = bubble_df[
+                    bubble_df["quantity"].notna() &
+                    bubble_df["value_usd"].notna()
+                ]
+                # Clean avg_unit_rate for bubble size
+                if "avg_unit_rate" in bubble_df.columns:
+                    bubble_df = bubble_df[
+                        bubble_df["avg_unit_rate"].notna() &
+                        (bubble_df["avg_unit_rate"] > 0) &
+                        np.isfinite(bubble_df["avg_unit_rate"])
+                    ]
+                    size_col = "avg_unit_rate"
+                else:
+                    size_col = None
                 if not bubble_df.empty:
                     fig_bubble = px.scatter(
                         bubble_df,
                         x="quantity",
                         y="value_usd",
-                        size="avg_unit_rate" if "avg_unit_rate" in bubble_df.columns else None,
+                        size=size_col,
                         color="description_any",
                         hover_name="description_any",
                         title=f"Value vs Quantity by Description – {pick}",
