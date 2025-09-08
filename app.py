@@ -55,6 +55,9 @@ def hs4_from_any(x: str) -> str | None:
     if pd.isna(x):
         return None
     s = str(x)
+    digits = re.findall(r"\d{4}", s)
+    if digits:
+        return digits[0]
     digits = re.findall(r"\d+", s)
     return digits[0][:4] if digits else None
 
@@ -141,6 +144,7 @@ def normalize_columns(df: pd.DataFrame) -> pd.DataFrame:
 
     if "hs_code" in df.columns:
         df["hs4"] = df["hs_code"].map(hs4_from_any)
+    st.write("HS4 after normalization:", df["hs4"].unique() if "hs4" in df.columns else "No hs4 column")
 
     if "product_description" in df.columns and "hs_product_description" in df.columns:
         df["description_any"] = df["product_description"].fillna(df["hs_product_description"])
@@ -321,6 +325,8 @@ def main() -> None:
     default_f1 = Path(st.session_state.get("file1", "7311_tanks_only.xlsx"))
     default_f2 = Path(st.session_state.get("file2", "84195010 (1).xlsx"))
     df_all = concat_sources([default_f1, default_f2])
+    st.write("Loaded rows:", len(df_all))
+    st.write("HS4 unique values:", df_all["hs4"].unique() if "hs4" in df_all.columns else "No hs4 column")
 
     if df_all.empty:
         st.warning(
