@@ -1,0 +1,194 @@
+origin_country,dest_country,value_usd
+Bangladesh,India,44142.26
+Belgium,Nigeria,112355.966
+Belgium,Philippines,5620.6
+Belgium,Uganda,2298418.52
+Belgium,United States,0.0
+Belgium,Vietnam,253497.80933999998
+Brazil,United States,0.0
+Bulgaria,Nigeria,3157.625
+Canada,United States,0.0
+Chile,United States,38407.0
+China,Botswana,253.01
+China,Ghana,79781.296
+China,India,862155.2
+China,Kenya,18227048.22
+China,Malaysia,8339571.47
+China,Namibia,55831.61
+China,Nigeria,1630867.7820000001
+China,Philippines,10489621.64
+China,South Sudan,68366.26
+China,Uganda,69966.11
+China,United States,0.0
+China,Vietnam,27355089.913126
+Colombia,United States,0.0
+Costa Rica,United States,150.0
+Czech Republic,Uganda,134144.44
+Czech Republic,Vietnam,621548.17617
+Denmark,Vietnam,8388.39
+Dominican Republic,United States,0.0
+Ecuador,United States,2128.74
+Egypt,Kenya,222.2
+Egypt,Nigeria,199.479
+European Union,Vietnam,23731.464659999998
+Finland,Vietnam,10718.19579
+France,India,8748.32
+France,Vietnam,294144.30145
+Germany,Ghana,51.69
+Germany,India,10921.630000000001
+Germany,Malaysia,13244.119999999999
+Germany,Nigeria,5972.897
+Germany,Philippines,2138.18
+Germany,Uganda,2303.53
+Germany,Vietnam,841297.5758400001
+Ghana,Nigeria,1331.076
+Hong Kong,Philippines,565.4
+India,Canada,676852.27
+India,Ghana,2415136.8
+India,India,2374618.63
+India,Kenya,341582.51
+India,Malaysia,821991.9500000001
+India,Nigeria,2132198.3770000003
+India,Oman,319871.82
+India,Philippines,573341.67
+India,Qatar,985914.9261662762
+India,Saudi Arabia,5036612.699591519
+India,Senegal,46227.65
+India,South Africa,1859080.810478407
+India,Thailand,39209.42
+India,Uganda,45279.0
+India,United Arab Emirates,3603830.56
+India,United States,44311233.61797786
+India,Vietnam,3002427.69956
+Indonesia,India,21800.0
+Indonesia,Malaysia,17979.47
+Indonesia,Qatar,10000.0
+Indonesia,United States,154924.14
+Ireland,Vietnam,133340.8
+Italy,Ghana,12833.203
+Italy,India,86051.08
+Italy,Nigeria,851956.076
+Italy,Philippines,28722.8
+Italy,Uganda,153538.61
+Italy,United States,0.0
+Italy,Vietnam,495144.43622000003
+Japan,India,136269.63
+Japan,Malaysia,2093024.15
+Japan,Philippines,349554.14
+Japan,Vietnam,809253.689697
+Kazakhstan,United Arab Emirates,263878.0
+Kenya,Canada,2375.134
+Kenya,India,1998.78
+Kenya,Uganda,81337.986
+Kenya,United Arab Emirates,80976.50200000001
+Kenya,United States,2375.134
+Malaysia,Canada,231895.3
+Malaysia,India,18165.739999999998
+Malaysia,Malaysia,10420024.0
+Malaysia,Philippines,14241.42
+Malaysia,Qatar,19711.93
+Malaysia,Saudi Arabia,111814.99
+Malaysia,South Africa,4932.09
+Malaysia,Thailand,601567.33
+Malaysia,Uganda,6036.0
+Malaysia,United Arab Emirates,11394.109999999999
+Malaysia,United States,3875770.31
+Malaysia,Vietnam,73862.24062
+Mexico,Canada,745943.0
+Mexico,India,186235.84
+Mexico,Malaysia,213000.0
+Mexico,Philippines,709.4
+Mexico,United Arab Emirates,196866.5
+Mexico,United States,9129302.49
+Morocco,United States,0.0
+Netherlands,Ghana,5276.848
+Netherlands,Kenya,27524.47
+Netherlands,Philippines,1123.9
+Netherlands,United States,0.0
+Netherlands,Vietnam,105599.18068
+New Zealand,Vietnam,1949.71683
+Nigeria,Nigeria,2011515.401
+Nigeria,South Sudan,5528.32
+Norway,Vietnam,43918.70192
+Oman,United States,0.0
+Pakistan,United Arab Emirates,8015.48
+Panama,United States,25065.4
+Philippines,Malaysia,20000.0
+Philippines,Qatar,10000.0
+Philippines,Thailand,225000.0
+Philippines,United Arab Emirates,10000.0
+Philippines,Vietnam,45000.0
+Poland,Vietnam,231847.27181
+Portugal,Uganda,133071.35
+Portugal,Vietnam,254247.25770999998
+Russia,India,4269.65
+Rwanda,Kenya,171710.78
+Singapore,Malaysia,3124019.73
+Singapore,Philippines,3335.5
+Singapore,United States,0.0
+Singapore,Vietnam,17318.23506
+Slovakia,Vietnam,11801.10768
+Slovenia,Philippines,6411.83
+South Africa,Ghana,81.827
+South Korea,Ghana,5448.024
+South Korea,Nigeria,638.856
+South Korea,Philippines,15621.220000000001
+South Korea,United States,0.0
+South Korea,Vietnam,1702871.41376
+Spain,Uganda,412367.27
+Spain,United States,0.0
+Spain,Vietnam,3288.7629
+Sri Lanka,United States,0.0
+Sweden,Malaysia,3270.97
+Taiwan,Philippines,763.5
+Taiwan,Uganda,573.0
+Taiwan,Vietnam,16429.36473
+Thailand,Malaysia,2032.3
+Thailand,Philippines,26373.0
+Thailand,United States,0.0
+Thailand,Vietnam,76304.46
+Trinidad and Tobago,United States,0.0
+Turkey,Botswana,224.16
+Turkey,Ghana,112090.84300000001
+Turkey,India,60376.23
+Turkey,Kenya,636937.32
+Turkey,Malaysia,12905.199999999999
+Turkey,Namibia,8550.0
+Turkey,Nigeria,10038925.433
+Turkey,Oman,395192.67
+Turkey,Qatar,191155.52
+Turkey,Saudi Arabia,395089.8
+Turkey,Senegal,168889.21000000002
+Turkey,South Africa,548483.28
+Turkey,South Sudan,28053.819
+Turkey,Uganda,22752.1
+Turkey,United Arab Emirates,788040.35
+Turkey,United States,1188409.47
+Turkey,Vietnam,54908.932570000004
+United Arab Emirates,Kenya,55845.090000000004
+United Arab Emirates,Nigeria,1524399.736
+United Arab Emirates,South Sudan,1027.461
+United Arab Emirates,Uganda,35290.31
+United Kingdom,Ghana,224662.92600000004
+United Kingdom,India,21073.489999999998
+United Kingdom,Kenya,168.7
+United Kingdom,Namibia,108467.73
+United Kingdom,Philippines,245626.65
+United Kingdom,Vietnam,83489.85651
+United States,Ghana,8578.423
+United States,India,5671901.14
+United States,Kenya,7597.83
+United States,Malaysia,15302.39
+United States,Nigeria,20219.154
+United States,Philippines,2648.3
+United States,South Sudan,187185.27000000002
+United States,Uganda,792.44
+United States,Vietnam,1042354.39606
+Vietnam,Canada,850.26272
+Vietnam,India,57000.0
+Vietnam,Malaysia,922753.55
+Vietnam,Philippines,8860.0
+Vietnam,Thailand,27180.0
+Vietnam,United Arab Emirates,120000.0
+Vietnam,United States,787812.22
+Vietnam,Vietnam,12597350.38371
