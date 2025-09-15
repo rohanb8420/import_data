@@ -572,7 +572,7 @@ def main():
         "CRYOGENIC STEAM HEATED VAPORIZERS", "LIQUEFIED NATURAL GAS TANK",
         "CRYOGENIC SHELL N TUBE VAPORIZER", "CRYOGENIC WATER BATH VAPORIZER",
         "CRYOGENIC PUMP", "CRYOGENIC HIGH PRESSURE PUMP", "LIN PUMP", "LOX PUMP",
-        "LAR PUMP", "CRYOGENIC CYLINDER MANIFOLD", "cryogenic", "lin","lox","lar", "lng","liquid oxygen","liquid nitrogen",
+        "LAR PUMP", "CRYOGENIC CYLINDER MANIFOLD", "cryogenic","lox","lar", "lng","liquid oxygen","liquid nitrogen",
         "liquid argon","liquid co2","liquid carbon dioxide","medical oxygen","liquid medical oxygen",
     ]
 
